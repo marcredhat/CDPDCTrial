@@ -102,7 +102,7 @@ cp ~/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar /usr/share/
 rm -rf ~/mysql-connector-java-5.1.46*
 
 echo "-- Create DBs required by CM"
-cd /root/CDPDCTrial
+cd ./CDPDCTrial
 mysql -u root < scripts/create_db.sql
 
 echo "-- Secure MariaDB"
@@ -132,8 +132,8 @@ pip install psycopg2==2.7.5 --ignore-installed
 echo 'LC_ALL="en_US.UTF-8"' >> /etc/locale.conf
 /usr/pgsql-9.6/bin/postgresql96-setup initdb
 
-cat /root/CDPDCTrial/conf/pg_hba.conf > /var/lib/pgsql/9.6/data/pg_hba.conf
-cat /root/CDPDCTrial/conf/postgresql.conf > /var/lib/pgsql/9.6/data/postgresql.conf
+cat ./CDPDCTrial/conf/pg_hba.conf > /var/lib/pgsql/9.6/data/pg_hba.conf
+cat ./CDPDCTrial/conf/postgresql.conf > /var/lib/pgsql/9.6/data/postgresql.conf
 
 echo "--Enable and start pgsql"
 systemctl enable postgresql-9.6
