@@ -205,18 +205,18 @@ systemctl restart sshd
 echo "-- Start CM, it takes about 2 minutes to be ready"
 systemctl start cloudera-scm-server
 
-while [ `curl -s -X GET -u "admin:admin"  http://localhost:7180/api/version` -z ] ;
-    do
-    echo "waiting 10s for CM to come up..";
-    sleep 10;
-done
+#while [ `curl -s -X GET -u "admin:admin"  http://localhost:7180/api/version` -z ] ;
+#    do
+#    echo "waiting 10s for CM to come up..";
+#    sleep 10;
+#done
 
 echo "-- Now CM is started and the next step is to automate using the CM API"
 
 pip install --upgrade pip cm_client
 
-sed -i "s/YourHostname/`hostname -f`/g" ~/CDPDCTrial/scripts/create_cluster.py
-sed -i "s/YourHostname/`hostname -f`/g" ~/CDPDCTrial/scripts/create_cluster.py
+sed -i "s/YourHostname/10.0.2.15/g" ~/CDPDCTrial/scripts/create_cluster.py
+sed -i "s/YourHostname/10.0.2.15/g" ~/CDPDCTrial/scripts/create_cluster.py
 
 python ~/CDPDCTrial/scripts/create_cluster.py ~/CDPDCTrial/conf/cdpsandbox.json
 
