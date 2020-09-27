@@ -103,10 +103,10 @@ rm -rf ~/mysql-connector-java-5.1.46*
 
 echo "-- Create DBs required by CM"
 cd ./CDPDCTrial
-mysql -u root < scripts/create_db.sql
+mysql -u root < /CDPDCTrial/scripts/create_db.sql
 
 echo "-- Secure MariaDB"
-mysql -u root < scripts/secure_mariadb.sql
+mysql -u root < /CDPDCTrial/scripts/secure_mariadb.sql
 
 echo "-- Prepare CM database 'scm'"
 /opt/cloudera/cm/schema/scm_prepare_database.sh mysql scm scm cloudera
