@@ -215,10 +215,10 @@ echo "-- Now CM is started and the next step is to automate using the CM API"
 
 pip install --upgrade pip cm_client
 
-sed -i "s/YourHostname/10.0.2.15/g" ~/CDPDCTrial/scripts/create_cluster.py
-sed -i "s/YourHostname/10.0.2.15/g" ~/CDPDCTrial/scripts/create_cluster.py
+sed -i "s/YourHostname/10.0.2.15/g" ./CDPDCTrial/scripts/create_cluster.py
+sed -i "s/YourHostname/10.0.2.15/g" ./CDPDCTrial/scripts/create_cluster.py
 
-python ~/CDPDCTrial/scripts/create_cluster.py ~/CDPDCTrial/conf/cdpsandbox.json
+python ./CDPDCTrial/scripts/create_cluster.py ./CDPDCTrial/conf/cdpsandbox.json
 
 sudo usermod cloudera -G hadoop
 sudo -u hdfs hdfs dfs -mkdir /user/cloudera
