@@ -82,7 +82,7 @@ yum install -y cloudera-manager-agent cloudera-manager-daemons cloudera-manager-
 sed -i$(date +%s).bak '/^[^#]*server_host/s/^/# /' /etc/cloudera-scm-agent/config.ini
 sed -i$(date +%s).bak '/^[^#]*listening_ip/s/^/# /' /etc/cloudera-scm-agent/config.ini
 sed -i$(date +%s).bak "/^# server_host.*/i server_host=$(hostname)" /etc/cloudera-scm-agent/config.ini
-sed -i$(date +%s).bak "/^# listening_ip=.*/i listening_ip=10.0.2.15" /etc/cloudera-scm-agent/config.ini
+sed -i$(date +%s).bak "/^# listening_ip=.*/i listening_ip=0.0.0.0" /etc/cloudera-scm-agent/config.ini
 
 service cloudera-scm-agent restart
 
